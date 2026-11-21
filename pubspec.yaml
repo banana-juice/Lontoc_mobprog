@@ -24,12 +24,3 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-
-  # Uncomment once the font files are placed in assets/fonts/
-  # fonts:
-  #   - family: Klavika
-  #     fonts:
-  #       - asset: assets/fonts/Klavika-Regular.ttf
-  #   - family: Frutiger
-  #     fonts:
-  #       - asset: assets/fonts/FrutigerLStd-Roman.otf
