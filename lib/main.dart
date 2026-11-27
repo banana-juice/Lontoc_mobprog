@@ -21,12 +21,12 @@ class MainApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: appName,
+          title: "Facebook Replication",
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
               seedColor: appPrimary,
               primary: appPrimary,
-              secondary: appAccent,
+              surface: appSurface,
             ),
             scaffoldBackgroundColor: appBackground,
           ),

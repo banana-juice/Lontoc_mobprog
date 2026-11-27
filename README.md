@@ -1,14 +1,27 @@
 # lab_act1a
 
-**Kpopverse** is a social media app for K-pop fans, built with Flutter. The posts and notifications are made-up sample data for a class activity.
+Laboratory Activity 1A: a Facebook-style newsfeed of K-pop idols, built with Flutter. The posts and notifications are made-up sample data for a class activity.
 
 ## Features
 
 1. **Dynamic posts:** each post has its own like count, comment count and date, and shows a photo, a placeholder, or no image.
 2. **Dynamic AppBar title:** the title follows the selected tab.
 3. **Bottom navigation:** Home, Idols, Notifications and Profile.
-4. **App name:** Kpopverse.
-5. **Color palette:** violet, pink, deep plum and lavender (`lib/constants.dart`).
+4. **Color palette:** Facebook blue, white and light grey (`lib/constants.dart`).
+
+## Photo credits
+
+Photos from Wikimedia Commons, some resized and cropped in the app.
+
+| File | Author | License | Link |
+| --- | --- | --- | --- |
+| `minji.jpg` | K-POPIT | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | [Source](<https://commons.wikimedia.org/wiki/File:20230905_Minji_(NewJeans).jpg>) |
+| `haerin.jpg` | K-POPIT | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | [Source](<https://commons.wikimedia.org/wiki/File:20230905_Haerin_(NewJeans).jpg>) |
+| `jihyo.jpg` | Pearly Gates Korea | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | [Source](<https://commons.wikimedia.org/wiki/File:Park_Jihyo_for_Pearly_Gates_Korea_01.jpg>) |
+| `sakura.jpg` | K-POPIT | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | [Source](<https://commons.wikimedia.org/wiki/File:20230630_Sakura_(LE_SSERAFIM).jpg>) |
+| `chaewon.jpg` | MUSHROOM COMPANY | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | [Source](<https://commons.wikimedia.org/wiki/File:Kim_Chaewon_LE_SSERAFIM_220923.jpg>) |
+
+Credits for the Karina and Winter photos appear under their posts.
 
 ## Laboratory Discussion
 

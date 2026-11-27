@@ -1,5 +1,4 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lontoc_mobprog/constants.dart';
 import 'package:lontoc_mobprog/widgets/custom_text.dart';
 import 'package:lontoc_mobprog/widgets/post_action_button.dart';
 import 'package:lontoc_mobprog/widgets/post_image.dart';
@@ -79,7 +78,7 @@ class NewsfeedCard extends StatelessWidget {
                     CustomText(
                       text: userName,
                       fontSize: screenUtilFontUserNameSize,
-                      color: appDark,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                     Row(

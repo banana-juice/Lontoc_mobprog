@@ -8,26 +8,31 @@ class NotificationScreen extends StatelessWidget {
   static const List<NotificationCard> _notifications = [
     NotificationCard(
       name: 'Kim Minji',
+      avatarPath: 'assets/images/minji.jpg',
       post: 'Good morning!',
       description: 'Shared a new post',
     ),
     NotificationCard(
       name: 'Park Jihyo',
+      avatarPath: 'assets/images/jihyo.jpg',
       post: 'Practice done!',
       description: 'Shared a new post',
     ),
     NotificationCard(
       name: 'Kang Haerin',
+      avatarPath: 'assets/images/haerin.jpg',
       post: 'Found a cute cat',
       description: 'Added a new update',
     ),
     NotificationCard(
       name: 'Sakura Miyawaki',
+      avatarPath: 'assets/images/sakura.jpg',
       post: 'New crochet project',
       description: 'Added a new update',
     ),
     NotificationCard(
       name: 'Kim Chaewon',
+      avatarPath: 'assets/images/chaewon.jpg',
       post: 'See you at the next show!',
       description: 'Mentioned FEARNOT in a post',
     ),

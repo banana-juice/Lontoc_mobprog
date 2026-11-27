@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
           CustomText(
             text: 'Lontoc',
             fontSize: ScreenUtil().setSp(22),
-            color: appDark,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
           CustomText(

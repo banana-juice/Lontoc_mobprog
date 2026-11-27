@@ -2,12 +2,22 @@ import 'package:lontoc_mobprog/widgets/newsfeed_card.dart';
 import 'package:material_ui/material_ui.dart';
 
 // Images live in assets/images/.
-// Photos: snow plumflower via Wikimedia Commons.
+// All idol photos come from Wikimedia Commons; credits are in README.md.
 const String _karinaAvatar = 'assets/images/karina.jpg';
 const String _winterAvatar = 'assets/images/winter.jpg';
 const String _winterPost = 'assets/images/winter_post.jpg';
 const String _myAvatar =
     'assets/images/my_avatar.jpg'; // optional; falls back to initials
+const String _minjiPhoto = 'assets/images/minji.jpg';
+const String _haerinPhoto = 'assets/images/haerin.jpg';
+const String _jihyoPhoto = 'assets/images/jihyo.jpg';
+const String _sakuraPhoto = 'assets/images/sakura.jpg';
+const String _chaewonPhoto = 'assets/images/chaewon.jpg';
+
+const String _minjiCredit = 'Photo: K-POPIT, CC BY 3.0, via Wikimedia Commons';
+const String _jihyoCredit =
+    'Photo: Pearly Gates Korea, CC BY 3.0, via Wikimedia Commons';
+const String _sakuraCredit = 'Photo: K-POPIT, CC BY 3.0, via Wikimedia Commons';
 
 const String _karinaCredit =
     'Photo: snow plumflower, CC BY-SA 4.0, via Wikimedia Commons';
@@ -39,8 +49,10 @@ class _NewsfeedScreenState extends State<NewsfeedScreen>
         date: now.subtract(const Duration(minutes: 25)),
         numOfLikes: 15200,
         numOfComments: 940,
+        avatarPath: _minjiPhoto,
         currentUserAvatarPath: _myAvatar,
-        hasPlaceholder: true,
+        imagePath: _minjiPhoto,
+        photoCredit: _minjiCredit,
       ),
       NewsfeedCard(
         userName: 'Karina',
@@ -59,7 +71,10 @@ class _NewsfeedScreenState extends State<NewsfeedScreen>
         date: now.subtract(const Duration(hours: 5)),
         numOfLikes: 18700,
         numOfComments: 1203,
+        avatarPath: _jihyoPhoto,
         currentUserAvatarPath: _myAvatar,
+        imagePath: _jihyoPhoto,
+        photoCredit: _jihyoCredit,
       ),
       NewsfeedCard(
         userName: 'Kang Haerin',
@@ -67,6 +82,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen>
         date: now.subtract(const Duration(days: 1)),
         numOfLikes: 14300,
         numOfComments: 778,
+        avatarPath: _haerinPhoto,
         currentUserAvatarPath: _myAvatar,
         hasPlaceholder: true,
       ),
@@ -76,8 +92,10 @@ class _NewsfeedScreenState extends State<NewsfeedScreen>
         date: now.subtract(const Duration(days: 3)),
         numOfLikes: 11800,
         numOfComments: 645,
+        avatarPath: _sakuraPhoto,
         currentUserAvatarPath: _myAvatar,
-        hasPlaceholder: true,
+        imagePath: _sakuraPhoto,
+        photoCredit: _sakuraCredit,
       ),
       NewsfeedCard(
         userName: 'Kim Chaewon',
@@ -85,6 +103,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen>
         date: DateTime(2026, 11, 18),
         numOfLikes: 13400,
         numOfComments: 702,
+        avatarPath: _chaewonPhoto,
         currentUserAvatarPath: _myAvatar,
       ),
       NewsfeedCard(

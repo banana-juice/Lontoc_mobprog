@@ -36,8 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: appTextLight,
-        shadowColor: appLight,
+        backgroundColor: appSurface,
+        surfaceTintColor: Colors.transparent, // keeps the bar pure white
+        shadowColor: appTextLight,
         elevation: 2,
         title: CustomText(
           text: _titles[_selectedIndex],
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         // Keeps every item in place when there are more than three.
         type: BottomNavigationBarType.fixed,
-        backgroundColor: appTextLight,
+        backgroundColor: appSurface,
         showUnselectedLabels: false,
         showSelectedLabels: false,
         onTap: _onTappedBar,

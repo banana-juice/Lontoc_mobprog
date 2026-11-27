@@ -1,5 +1,4 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lontoc_mobprog/constants.dart';
 import 'package:lontoc_mobprog/widgets/custom_text.dart';
 import 'package:lontoc_mobprog/widgets/user_avatar.dart';
 import 'package:material_ui/material_ui.dart';
@@ -44,7 +43,7 @@ class NotificationCard extends StatelessWidget {
                   CustomText(
                     text: name,
                     fontSize: ScreenUtil().setSp(18),
-                    color: appDark,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                   CustomText(

@@ -8,11 +8,23 @@ class IdolsScreen extends StatelessWidget {
   const IdolsScreen({super.key});
 
   static const List<({String name, String group, String? avatar})> _idols = [
-    (name: 'Kim Minji', group: 'NewJeans', avatar: null),
-    (name: 'Kang Haerin', group: 'NewJeans', avatar: null),
-    (name: 'Park Jihyo', group: 'TWICE', avatar: null),
-    (name: 'Sakura Miyawaki', group: 'LE SSERAFIM', avatar: null),
-    (name: 'Kim Chaewon', group: 'LE SSERAFIM', avatar: null),
+    (name: 'Kim Minji', group: 'NewJeans', avatar: 'assets/images/minji.jpg'),
+    (
+      name: 'Kang Haerin',
+      group: 'NewJeans',
+      avatar: 'assets/images/haerin.jpg',
+    ),
+    (name: 'Park Jihyo', group: 'TWICE', avatar: 'assets/images/jihyo.jpg'),
+    (
+      name: 'Sakura Miyawaki',
+      group: 'LE SSERAFIM',
+      avatar: 'assets/images/sakura.jpg',
+    ),
+    (
+      name: 'Kim Chaewon',
+      group: 'LE SSERAFIM',
+      avatar: 'assets/images/chaewon.jpg',
+    ),
     (name: 'Karina', group: 'aespa', avatar: 'assets/images/karina.jpg'),
     (name: 'Winter', group: 'aespa', avatar: 'assets/images/winter.jpg'),
   ];
@@ -28,7 +40,7 @@ class IdolsScreen extends StatelessWidget {
           title: CustomText(
             text: idol.name,
             fontSize: ScreenUtil().setSp(15),
-            color: appDark,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
           subtitle: CustomText(

@@ -67,7 +67,7 @@ class _LikeButtonState extends State<LikeButton>
     return PostActionButton(
       icon: _isLiked ? Icons.thumb_up : Icons.thumb_up_outlined,
       label: '$_likes',
-      color: _isLiked ? appAccent : appDark,
+      color: _isLiked ? appPrimary : appDark,
       onPressed: _toggleLike,
     );
   }
