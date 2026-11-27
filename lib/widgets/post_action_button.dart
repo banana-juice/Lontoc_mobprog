@@ -1,9 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lontoc_mobprog/constant.dart';
-import 'package:lontoc_mobprog/widget/custom_text.dart';
+import 'package:lontoc_mobprog/constants.dart';
+import 'package:lontoc_mobprog/widgets/custom_text.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Enhancement 3: Reusable action button (icon + label) used for
+/// Reusable action button (icon + label) used for
 /// Like / Comment / Share.
 class PostActionButton extends StatelessWidget {
   final IconData icon;
@@ -15,7 +15,7 @@ class PostActionButton extends StatelessWidget {
     super.key,
     required this.icon,
     required this.label,
-    this.color = fbDarkPrimary,
+    this.color = appDark,
     this.onPressed,
   });
 
@@ -44,7 +44,12 @@ class LikeButton extends StatefulWidget {
   State<LikeButton> createState() => _LikeButtonState();
 }
 
-class _LikeButtonState extends State<LikeButton> {
+class _LikeButtonState extends State<LikeButton>
+    with AutomaticKeepAliveClientMixin {
+  // Remembers the like after the post is scrolled out of view.
+  @override
+  bool get wantKeepAlive => _isLiked;
+
   late int _likes = widget.initialLikes;
   bool _isLiked = false;
 
@@ -53,14 +58,16 @@ class _LikeButtonState extends State<LikeButton> {
       _isLiked = !_isLiked;
       _likes += _isLiked ? 1 : -1;
     });
+    updateKeepAlive();
   }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return PostActionButton(
       icon: _isLiked ? Icons.thumb_up : Icons.thumb_up_outlined,
       label: '$_likes',
-      color: _isLiked ? fbPrimary : fbDarkPrimary,
+      color: _isLiked ? appAccent : appDark,
       onPressed: _toggleLike,
     );
   }

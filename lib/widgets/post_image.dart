@@ -1,7 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lontoc_mobprog/constants.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Enhancement 1: Reusable widget for the post image area.
+/// Reusable widget for the post image area.
 ///
 /// Accepts either a network URL (starts with "http") or an asset path
 /// (e.g. 'assets/images/iron_man.jpg') and shows a loading indicator
@@ -62,6 +63,28 @@ class PostImage extends StatelessWidget {
             size: ScreenUtil().setSp(40),
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// Stand-in for a post whose photo is not available yet.
+class PostPlaceholder extends StatelessWidget {
+  const PostPlaceholder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: ScreenUtil().setHeight(150),
+      decoration: BoxDecoration(
+        color: appTextLight,
+        borderRadius: BorderRadius.circular(ScreenUtil().setSp(8)),
+      ),
+      child: Icon(
+        Icons.image_outlined,
+        color: appLight,
+        size: ScreenUtil().setSp(48),
       ),
     );
   }

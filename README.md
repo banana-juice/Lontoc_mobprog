@@ -1,6 +1,14 @@
 # lab_act1a
 
-Laboratory Activity 1A: a Facebook-style newsfeed built with Flutter.
+**Kpopverse** is a social media app for K-pop fans, built with Flutter. The posts and notifications are made-up sample data for a class activity.
+
+## Features
+
+1. **Dynamic posts:** each post has its own like count, comment count and date, and shows a photo, a placeholder, or no image.
+2. **Dynamic AppBar title:** the title follows the selected tab.
+3. **Bottom navigation:** Home, Idols, Notifications and Profile.
+4. **App name:** Kpopverse.
+5. **Color palette:** violet, pink, deep plum and lavender (`lib/constants.dart`).
 
 ## Laboratory Discussion
 
@@ -8,7 +16,7 @@ Laboratory Activity 1A: a Facebook-style newsfeed built with Flutter.
 
 ### 1. The image is an optional parameter
 
-In `lib/widget/newsfeed_card.dart`, the card takes the image as a nullable `String?`:
+In `lib/widgets/newsfeed_card.dart`, the card takes the image as a nullable `String?`:
 
 ```dart
 final String? imagePath;
@@ -37,12 +45,13 @@ if (imagePath != null && photoCredit != null)
 ```
 
 - If `imagePath` is `null`, the `PostImage` widget is **not added to the widget tree at all**. No empty space or blank box is left, so the like/comment row moves up right under the post text.
+- If `imagePath` is `null` but `hasPlaceholder` is `true`, a `PostPlaceholder` box is shown instead.
 - If `imagePath` has a value, `PostImage` is added between the post content and the action buttons.
 - The photo credit follows the same idea. It only appears when there is an image **and** a credit, so a credit can never show under a post with no picture.
 
 ### 3. `PostImage` is a separate reusable widget
 
-The image logic lives in `lib/widget/post_image.dart` so that `NewsfeedCard` stays short and readable. `PostImage`:
+The image logic lives in `lib/widgets/post_image.dart` so that `NewsfeedCard` stays short and readable. `PostImage`:
 
 - Accepts either a **network URL** (starts with `http`, uses `NetworkImage`) or a **local asset path** (uses `AssetImage`), so the same card works for both.
 - Shows a `CircularProgressIndicator` while the image loads (`loadingBuilder`).
@@ -51,7 +60,7 @@ The image logic lives in `lib/widget/post_image.dart` so that `NewsfeedCard` sta
 
 ### 4. The avatar also handles a missing image
 
-`lib/widget/user_avatar.dart` uses the same approach for the profile picture. `avatarPath` is nullable, and if it is `null` or fails to load, the avatar falls back to the user's initials (for example "K" for Karina) inside the `CircleAvatar`.
+`lib/widgets/user_avatar.dart` uses the same approach for the profile picture. `avatarPath` is nullable, and if it is `null` or fails to load, the avatar falls back to the user's initials (for example "K" for Karina) inside the `CircleAvatar`.
 
 ### 5. Usage in `newsfeed_screen.dart`
 
@@ -60,7 +69,7 @@ The image logic lives in `lib/widget/post_image.dart` so that `NewsfeedCard` sta
 NewsfeedCard(
   userName: 'Winter',
   postContent: 'Winter is here ❄️ Thank you for always being with us!',
-  date: 'November 20, 2026',
+  date: DateTime(2026, 11, 15),
   avatarPath: 'assets/images/winter.jpg',
   imagePath: 'assets/images/winter_post.jpg',
   photoCredit: 'Photo: snow plumflower, CC BY-SA 2.0, via Wikimedia Commons',
@@ -70,7 +79,7 @@ NewsfeedCard(
 NewsfeedCard(
   userName: 'Karina',
   postContent: 'Ready for the stage tonight! 💙',
-  date: '2 hours ago',
+  date: DateTime(2026, 11, 27, 9),
 ),
 ```
 
@@ -91,6 +100,7 @@ After adding new asset files, the app has to be fully stopped and run again (`fl
 | Case | `imagePath` | Result |
 | --- | --- | --- |
 | Text-only post | `null` | No image area is built, and the layout closes up. |
+| Photo not available yet | `null`, `hasPlaceholder: true` | A placeholder box is shown. |
 | Post with an image | a path or URL | `PostImage` is shown, with a loader while loading. |
 | Image fails to load | invalid path or URL | A grey placeholder icon is shown instead of an error. |
 | Image with a credit | path and `photoCredit` | The credit text is shown under the image. |

@@ -1,8 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lontoc_mobprog/constant.dart';
+import 'package:lontoc_mobprog/constants.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Enhancement 2: Avatar widget for the user profile image.
+/// Avatar widget for the user profile image.
 ///
 /// Shows the image (network URL or asset path) inside a [CircleAvatar].
 /// If no image is given or it fails to load, it falls back to the
@@ -43,7 +43,7 @@ class UserAvatar extends StatelessWidget {
     final initialsText = Text(
       _initials.isEmpty ? '?' : _initials,
       style: TextStyle(
-        color: fbTextColorWhite,
+        color: appTextLight,
         fontWeight: FontWeight.bold,
         fontSize: r * 0.8,
       ),
@@ -53,7 +53,7 @@ class UserAvatar extends StatelessWidget {
     // instead of the default center crop.
     return CircleAvatar(
       radius: r,
-      backgroundColor: fbLightPrimary,
+      backgroundColor: appLight,
       child: provider == null
           ? initialsText
           : ClipOval(
